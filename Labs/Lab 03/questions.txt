@@ -1,0 +1,19 @@
+Lab 03 - Questions
+Ethan Hirons, CMPT 221
+
+1. Why is Flexbox appropriate for the navigation while Grid is appropriate
+   for the cards?
+  The nav is one row of links, so it only needs one axis which is the flexbox.
+  The cards need rows and columns which is grid. With auto fit and minmax the browser picks the number of columns instead of me setting it. 
+
+
+
+2. What does margin-block-start: auto do inside a vertical flex card?
+It soaks up the leftover space above the link, oushing it to the bottom of the card. So every cards link lines up even when the paragraphs are different lenghts
+
+
+
+3. Why must keyboard focus be visible even when hover feedback is present?
+Hover needs a mouse, a keyboard user has no pointer so hover never shows for them. Focus is the only way they can see where they are on a page
+
+
