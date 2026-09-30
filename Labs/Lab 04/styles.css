@@ -1,0 +1,214 @@
+:root {
+  --ink: #172d3b;
+  --muted: #526773;
+  --accent: #245f7e;
+  --accent-dark: #173f54;
+  --surface: #edf5f7;
+  --line: #b7c8d0;
+  --focus: #c34f00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+a {
+  color: var(--accent-dark);
+  text-underline-offset: 0.18em;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  inset-block-start: 0.5rem;
+  inset-inline-start: 0.5rem;
+  z-index: 2;
+  padding: 0.6rem 0.8rem;
+  color: #ffffff;
+  background: var(--accent-dark);
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.page-width {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  padding-block: 2rem;
+  color: #ffffff;
+  background: var(--accent-dark);
+}
+
+.hero {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero > p {
+  max-width: 42rem;
+  margin-block: 0;
+}
+
+.eyebrow,
+.space-type {
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #bfe8f7;
+}
+
+h1 {
+  margin-block: 0.2rem 0;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  line-height: 1.1;
+}
+
+main {
+  padding-block: 2rem 4rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+button {
+  padding: 0.55rem 0.85rem;
+  color: var(--accent-dark);
+  background: #ffffff;
+  border: 2px solid var(--accent);
+  border-radius: 0.35rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--surface);
+}
+
+button[aria-pressed="true"] {
+  color: #ffffff;
+  background: var(--accent-dark);
+}
+
+.status {
+  color: var(--muted);
+  font-weight: 650;
+}
+
+/* TODO: Create a fluid Grid using repeat(), auto-fit, and minmax(). The
+   preferred minimum card width is 18rem, but it must not cause overflow. */
+.space-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 18rem), 1fr);
+  gap: 1.25rem;
+}
+
+/* TODO: Establish each shell as an inline-size query container. */
+.space-shell {
+  container-type: inline-size;
+}
+
+.space-card {
+  display: grid;
+  gap: 1rem;
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.8rem rgb(23 45 59 / 10%);
+}
+
+.space-location {
+  align-self: start;
+  margin: 0;
+  padding: 0.6rem;
+  color: #ffffff;
+  background: var(--accent);
+  border-radius: 0.35rem;
+  font-weight: 750;
+  text-align: center;
+}
+
+.space-type {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.space-card h3 {
+  margin-block: 0.2rem 0.5rem;
+  line-height: 1.25;
+}
+
+.space-card a {
+  font-weight: 700;
+}
+
+.help-panel {
+  margin-block-start: 2rem;
+  padding: 1.25rem;
+  border-inline-start: 0.35rem solid var(--accent);
+  background: var(--surface);
+}
+
+.help-panel h2 {
+  margin-block-start: 0;
+}
+
+.site-footer {
+  padding-block: 1rem;
+  border-block-start: 1px solid var(--line);
+  color: var(--muted);
+  background: var(--surface);
+}
+
+/* TODO: When a space shell is at least 24rem wide, give its card two
+   internal columns and align their contents at the start. */
+
+@container (min-width: 24rem) {
+  .space-card {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+  }
+}
+
+/* TODO: When the viewport is at least 55rem wide, give the hero two columns
+   and align its contents at the end. */
+@media (min-width: 55rem) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+  }
+}

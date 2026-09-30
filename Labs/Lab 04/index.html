@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Study Space Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="page-width hero">
+        <div>
+          <p class="eyebrow">Campus Library</p>
+          <h1>Study Space Finder</h1>
+        </div>
+        <p>Find a quiet place to focus or a collaborative space for your group.</p>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-width">
+      <section aria-labelledby="spaces-heading">
+        <h2 id="spaces-heading">Available spaces</h2>
+
+        <div class="filters" aria-label="Filter study spaces by environment">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="quiet" aria-pressed="false">Quiet</button>
+          <button type="button" data-filter="collaborative" aria-pressed="false">Collaborative</button>
+        </div>
+
+        <p id="filter-status" class="status" aria-live="polite">Showing 4 spaces.</p>
+
+        <div class="space-grid">
+          <div class="space-shell" data-environment="quiet">
+            <article class="space-card">
+              <p class="space-location">Floor 2</p>
+              <div>
+                <p class="space-type">Quiet</p>
+                <h3>Silent Reading Room</h3>
+                <p>Individual desks, adjustable lighting, and nearby power outlets.</p>
+                <a href="#help">View Silent Reading Room information</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="space-shell" data-environment="collaborative">
+            <article class="space-card">
+              <p class="space-location">Floor 1</p>
+              <div>
+                <p class="space-type">Collaborative</p>
+                <h3>Project Studio</h3>
+                <p>Large tables, whiteboards, and displays for team projects.</p>
+                <a href="#help">View Project Studio information</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="space-shell" data-environment="quiet">
+            <article class="space-card">
+              <p class="space-location">Floor 3</p>
+              <div>
+                <p class="space-type">Quiet</p>
+                <h3>Research Alcove</h3>
+                <p>Low-traffic seating near reference materials and research support.</p>
+                <a href="#help">View Research Alcove information</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="space-shell" data-environment="collaborative">
+            <article class="space-card">
+              <p class="space-location">Lower Level</p>
+              <div>
+                <p class="space-type">Collaborative</p>
+                <h3>Media Collaboration Room</h3>
+                <p>Reservable room with presentation equipment and space for six people.</p>
+                <a href="#help">View Media Collaboration Room information</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <aside id="help" class="help-panel" aria-labelledby="help-heading">
+        <h2 id="help-heading">Need help choosing?</h2>
+        <p>Ask at the library service desk for accessibility details and current availability.</p>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-width"><p>CMPT 221 Lab 4</p></div>
+    </footer>
+  </body>
+</html>

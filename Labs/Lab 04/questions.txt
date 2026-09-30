@@ -1,0 +1,12 @@
+Lab 04 - Questions
+Ethan Hirons, CMPT 221
+
+1. Why is the hero controlled by a media query while the card interior uses a
+   container query?
+   The hero spans the page, so viewport width is the right thing to measure. A container query lets each card lay itself out based on own width.
+
+2. What problem does min(100%, 18rem) prevent inside the Grid definition?
+  Below 18rem of available width, a plain minmax (18rem, 1fr) would force the track wider than its container which would lead to horizontal scrolling and the min() lets the track fall back too 100%.
+
+3. Why must the filter update both visible content and aria-pressed?
+  The visible cards tell sighted users what is showing; aria-pressed tells a screen reader which filter is active. If only one updates the two get out of sync and users are told the wrong filter.
