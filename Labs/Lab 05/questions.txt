@@ -1,0 +1,23 @@
+Lab 05 Questions
+Ethan Hirons, CMPT 221
+
+1. Why does filter() return a new array instead of changing services?
+
+Because services is the one copy of the data the whole page depends on. If
+filter changed it, clicking Academic would throw away the wellness objects
+and All would never work again. Returning a new array keeps the original
+list intact so every filter still has everything to choose from.
+
+2. Why does the render function call replaceChildren() before forEach()?
+
+The old cards are still in the list. Without clearing first, every
+click would append more cards on top of the ones already there instead of
+replacing them. replaceChildren empties the list so the forEach starts from
+nothing.
+
+3. Why is textContent appropriate when displaying object data?
+
+Because the data is plain text and textContent treats it that way. It sets
+the text without parsing it as HTML, so nothing in the data can turn into
+markup or run as code. innerHTML would parse it, which is slower and risky
+if the data ever came from somewhere I do not control.

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Campus Support Directory</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page-width">
+        <p class="eyebrow">Student Affairs</p>
+        <h1>Campus Support Directory</h1>
+        <p>Find academic and wellness support available to students.</p>
+      </div>
+    </header>
+
+    <main class="page-width">
+      <section aria-labelledby="services-heading">
+        <h2 id="services-heading">Support services</h2>
+
+        <div class="filters" aria-label="Filter support services by category">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="academic" aria-pressed="false">Academic</button>
+          <button type="button" data-filter="wellness" aria-pressed="false">Wellness</button>
+          <button type="button" data-filter="technology" aria-pressed="false">Technology</button>
+        </div>
+
+        <p id="service-status" class="status" aria-live="polite"></p>
+        <div id="service-list" class="service-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-width"><p>CMPT 221 Lab 5</p></div>
+    </footer>
+  </body>
+</html>
