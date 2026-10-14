@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Campus Conditions Watchlist</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <header>
+      <p class="eyebrow">CMPT 221 &middot; Lab 6</p>
+      <h1>Campus Conditions Watchlist</h1>
+      <p>Choose a campus sensor and give your saved reading a useful label.</p>
+    </header>
+    <main>
+      <section aria-labelledby="readings-heading">
+        <h2 id="readings-heading">Available readings</h2>
+        <button id="refresh" type="button">Refresh readings</button>
+        <p id="data-status" role="status"></p>
+        <p id="updated"></p>
+        <ul id="readings"></ul>
+      </section>
+      <section aria-labelledby="save-heading">
+        <h2 id="save-heading">Save a reading</h2>
+        <form id="save-form" novalidate>
+          <label for="sensor">Sensor (required)</label>
+          <select id="sensor" name="sensorId" required disabled>
+            <option value="">Load readings first</option>
+          </select>
+          <label for="label">Watchlist label (required)</label>
+          <input id="label" name="label" required minlength="3" maxlength="40"
+            aria-describedby="label-help">
+          <p id="label-help">Use 3&ndash;40 characters, excluding spaces at either end.</p>
+          <button id="save" type="submit" disabled>Add to watchlist</button>
+        </form>
+        <p id="save-status" role="status"></p>
+      </section>
+      <section aria-labelledby="watchlist-heading">
+        <h2 id="watchlist-heading" tabindex="-1">Your watchlist</h2>
+        <p>Saved items stay here until you reload the page. These readings are simulated.</p>
+        <ul id="watchlist"></ul>
+      </section>
+    </main>
+  </body>
+</html>

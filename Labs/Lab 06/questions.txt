@@ -1,0 +1,23 @@
+Lab 06 Questions
+Ethan Hirons, CMPT 221
+
+1. Why is response.ok checked even though fetch() is inside try/catch?
+
+fetch only rejects if the request itself fails, like the network dropping.
+A 404 or 500 still counts as a response, so it resolves and catch never
+runs. Without the check I would try to parse an error page as JSON.
+
+2. Why do custom validity messages need to be cleared?
+
+Because setCustomValidity sticks. Once a control has a message it stays
+invalid no matter what the user types, so the form keeps refusing to
+submit even after the label is fixed. Setting it to an empty string is
+what makes it valid again.
+
+3. Which fields would a database need to preserve the watchlist, and what
+   would a future server or API replace?
+
+A row would need a record id, a user id, the sensorId, the label, the
+saved location and temperatureC, and when it was saved. The server would
+replace the local readings.json fetch with a real sensor API request and
+it would revalidate the label instead of trusting the browser.

@@ -1,0 +1,8 @@
+{
+  "updatedAt": "2026-10-13T14:00:00Z",
+  "readings": [
+    { "id": "library", "location": "Library", "temperatureC": 21 },
+    { "id": "student-center", "location": "Student Center", "temperatureC": 23 },
+    { "id": "science-hall", "location": "Science Hall", "temperatureC": 20 }
+  ]
+}
