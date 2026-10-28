@@ -1,0 +1,42 @@
+Lab 07 Questions
+Ethan Hirons, CMPT 221
+
+1. Why are LIMIT and MAX_MINUTES converted and validated separately?
+
+They are both numbers but they allow different ranges. LIMIT has to be at
+least 1 because showing zero rows is not a real report. MAX_MINUTES is
+allowed to be 0 because asking for departures leaving right now is a fair
+question. One shared check would have to pick one minimum and would let a
+bad value through for the other variable.
+
+2. Why is total calculated before slice() applies the display limit?
+
+Because total is meant to say how many departures actually matched, not how
+many fit on the screen. If I counted after slicing I would always get the
+limit back and the line would read showing 4 of 4 even when 5 matched. The
+user would never know there was more.
+
+3. Why must a missing file be treated differently from a valid empty result?
+
+An empty result means the program worked and nothing matched the filters.
+A missing file means the program never got any data at all. If I caught the
+read error and returned an empty array the report would say no matching
+departures, which tells the user the shuttles are not running when really
+the app is broken. One is normal and exits 0, the other is a failure and
+exits 1.
+
+4. What would an HTTP server add between this logic and the browser interface?
+
+It would take the request over the network, read the filters from the query
+string instead of environment variables, run this same selecting and sorting
+on the server, and send back JSON with a status code. The browser would then
+fetch that endpoint instead of reading a local file. The logic in these
+modules would barely change because only the input and output ends move.
+
+5. Which value in your Project 1 interface will eventually require database
+   persistence?
+
+The saved items the user creates. Right now they live in a JavaScript array
+and disappear on reload, so a database row would need a record id, a user id
+so the list belongs to someone, the id of the thing that was saved, the label
+the user typed, the snapshot values shown at the time, and when it was saved.

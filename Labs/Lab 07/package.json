@@ -1,0 +1,11 @@
+{
+  "name": "week-09-lab-07",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "start:configured": "node --env-file=.env app.js",
+    "check": "node --check app.js && node --check config.js && node --check data.js && node --check report.js"
+  }
+}

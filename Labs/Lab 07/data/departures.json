@@ -1,0 +1,54 @@
+{
+  "updatedAt": "2026-10-27T14:30:00-04:00",
+  "departures": [
+    {
+      "id": "d1",
+      "route": "Green",
+      "destination": "Downtown",
+      "minutes": 0,
+      "status": "boarding"
+    },
+    {
+      "id": "d2",
+      "route": "Blue",
+      "destination": "North Campus",
+      "minutes": 12,
+      "status": "delayed"
+    },
+    {
+      "id": "d3",
+      "route": "Green",
+      "destination": "Science Center",
+      "minutes": 18,
+      "status": "on-time"
+    },
+    {
+      "id": "d4",
+      "route": "Red",
+      "destination": "Airport",
+      "minutes": 35,
+      "status": "on-time"
+    },
+    {
+      "id": "d5",
+      "route": "Green",
+      "destination": "Medical Center",
+      "minutes": 28,
+      "status": "on-time"
+    },
+    {
+      "id": "d6",
+      "route": "Blue",
+      "destination": "Stadium",
+      "minutes": 45,
+      "status": "delayed"
+    },
+    {
+      "id": "d7",
+      "route": "Red",
+      "destination": "Shopping Center",
+      "minutes": 9,
+      "status": "boarding"
+    }
+  ]
+}
