@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Study Space Availability</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Study space availability</h1>
+      <p>Find a space using current data supplied through the campus application server.</p>
+      <form id="filters">
+        <label>
+          Campus zone
+          <select name="zone">
+            <option value="all">All zones</option>
+            <option value="north">North</option>
+            <option value="central">Central</option>
+            <option value="south">South</option>
+            <option value="east">East</option>
+          </select>
+        </label>
+        <label>
+          Minimum open seats
+          <input name="minSeats" type="number" min="0" step="1" value="0">
+        </label>
+        <button type="submit">Update spaces</button>
+      </form>
+      <p id="status" role="status" aria-live="polite"></p>
+      <p id="updated"></p>
+      <ul id="spaces"></ul>
+    </main>
+  </body>
+</html>

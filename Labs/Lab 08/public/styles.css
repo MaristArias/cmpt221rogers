@@ -1,0 +1,54 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body { margin: 0; }
+
+main {
+  inline-size: min(100% - 2rem, 55rem);
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: end;
+  padding: 1rem;
+  border: 1px solid CanvasText;
+  border-radius: 0.5rem;
+}
+
+label { display: grid; gap: 0.25rem; }
+
+select, input, button {
+  min-block-size: 2.75rem;
+  padding-inline: 0.75rem;
+  font: inherit;
+}
+
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 0.2rem solid Highlight;
+  outline-offset: 0.15rem;
+}
+
+#spaces {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+#spaces li {
+  padding: 1rem;
+  border: 1px solid GrayText;
+  border-radius: 0.5rem;
+}
+
+#spaces p { margin-block-end: 0; }

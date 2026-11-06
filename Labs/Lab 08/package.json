@@ -1,0 +1,17 @@
+{
+  "name": "week-10-lab-08-api-adapter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "provider": "node provider.js",
+    "start:provider-error": "node --env-file=config/provider-error.env server.js",
+    "start:provider-invalid": "node --env-file=config/provider-invalid.env server.js",
+    "start:provider-slow": "node --env-file=config/provider-slow.env server.js",
+    "check": "node --check server.js && node --check config.js && node --check http-utils.js && node --check provider.js && node --check public/app.js",
+    "test:core": "node --test test/core.test.mjs",
+    "test:change": "node --test test/change.test.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}
