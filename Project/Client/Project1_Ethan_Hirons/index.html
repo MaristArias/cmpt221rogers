@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skycheck | Current Conditions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#results-heading">Skip to results</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div>
+        <h1>Skycheck</h1>
+        <p class="tagline">Compare current weather across your cities and decide where outdoor plans make sense today.</p>
+      </div>
+      <div class="update-box">
+        <p class="update-label">Last updated</p>
+        <p id="last-updated" class="update-value">Not loaded yet</p>
+        <p id="stale-note" class="stale-note" hidden>Data may be out of date</p>
+        <div class="button-row">
+          <button type="button" id="refresh-button">Refresh data</button>
+          <button type="button" id="error-button" class="secondary">Simulate error</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <section class="panel" aria-labelledby="controls-heading">
+      <h2 id="controls-heading">Explore conditions</h2>
+      <form id="controls" class="controls" autocomplete="off">
+        <div class="field">
+          <label for="search-input">Search city or region</label>
+          <input type="search" id="search-input" placeholder="Try Boston or Croatia">
+        </div>
+        <div class="field">
+          <label for="condition-select">Condition</label>
+          <select id="condition-select">
+            <option value="all">All conditions</option>
+            <option value="clear">Clear</option>
+            <option value="cloudy">Cloudy</option>
+            <option value="rain">Rain</option>
+            <option value="storm">Storm</option>
+            <option value="snow">Snow</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="sort-select">Sort by</label>
+          <select id="sort-select">
+            <option value="name">City name</option>
+            <option value="temp-desc">Warmest first</option>
+            <option value="temp-asc">Coolest first</option>
+            <option value="precip-desc">Highest rain chance</option>
+            <option value="wind-desc">Windiest</option>
+          </select>
+        </div>
+        <fieldset class="field units">
+          <legend>Temperature units</legend>
+          <label class="radio"><input type="radio" name="units" value="C" checked> Celsius</label>
+          <label class="radio"><input type="radio" name="units" value="F"> Fahrenheit</label>
+        </fieldset>
+      </form>
+    </section>
+
+    <div class="layout">
+      <section aria-labelledby="results-heading" class="results-section">
+        <h2 id="results-heading" tabindex="-1">Current conditions</h2>
+        <p id="result-count" class="result-count"></p>
+
+        <div id="loading-state" class="message loading" hidden>
+          <span class="spinner" aria-hidden="true"></span>
+          <p>Loading the latest conditions…</p>
+        </div>
+
+        <div id="error-state" class="message error" hidden>
+          <h3>Could not load conditions</h3>
+          <p>The data source did not respond. Your saved cities are still available.</p>
+          <button type="button" id="retry-button">Try again</button>
+        </div>
+
+        <div id="empty-state" class="message empty" hidden>
+          <h3>No matching cities</h3>
+          <p>Nothing matches your current search and filter. Clear them to see every city.</p>
+          <button type="button" id="clear-filters-button">Clear search and filter</button>
+        </div>
+
+        <ul id="results-list" class="card-grid" aria-label="City conditions"></ul>
+      </section>
+
+      <aside class="panel saved-panel" aria-labelledby="saved-heading">
+        <h2 id="saved-heading">Saved cities</h2>
+        <p class="hint">Saved cities and your notes would be stored in a database in Project 3.</p>
+        <ul id="saved-list" class="saved-list"></ul>
+        <p id="saved-empty" class="hint">No saved cities yet. Use the Save button on a card.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Sample data for a class prototype. Not a forecast and not for safety decisions.</p>
+    </div>
+  </footer>
+
+  <script src="data/sample-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
