@@ -1,0 +1,17 @@
+{
+  "name": "week-11-lab-09-legacy-api-rescue",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start:legacy": "node src/legacy-server.js",
+    "start": "node src/server.js",
+    "check": "node --check src/legacy-server.js && node --check src/catalog.js && node --check src/app.js && node --check src/server.js",
+    "test:core": "node --test test/core.test.js",
+    "test:change": "node --test test/change.test.js",
+    "test:student": "node --test test/student.test.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": { "express": "^5.3.0" }
+}
